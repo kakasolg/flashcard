@@ -81,6 +81,12 @@ flashcard_app/
     * 선택한 벡터 저장소 설정.
 5.  **환경 변수 설정**:
     * API 키 (LLM, 외부 서비스 등) 및 데이터베이스 연결 정보 설정.
+    * **Firebase 설정**:
+        * Firebase 프로젝트를 생성하고 웹 앱을 등록합니다.
+        * `public/firebase.js` 파일에 Firebase 구성 객체를 추가합니다. (Firestore `db`가 `firestoreDb`로 변경되었으니 참고하세요.)
+        * `public/firebase.js` 파일에 Realtime Database `databaseURL`을 추가합니다.
+        * Firebase CLI를 사용하여 Firestore 보안 규칙 (`firestore.rules`)을 배포합니다: `firebase deploy --only firestore:rules`
+        * Firebase CLI를 사용하여 Realtime Database 보안 규칙 (`realtimedb.rules.json`)을 배포합니다: `firebase deploy --only database`
 
 ## ▶️ 실행 방법 (개발 초기)
 

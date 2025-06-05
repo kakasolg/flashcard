@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Flashcard App</h1>
+
+    <div id="auth-container">
+        <h2>Login/Sign Up</h2>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="signup-button">Sign Up</button>
+        <button id="login-button">Login</button>
+        <button id="logout-button" style="display:none;">Logout</button>
+    </div>
+
+    <div id="flashcard-container" style="display:none;">
+        <h2>My Flashcards</h2>
+        <form id="flashcard-form">
+            <input type="text" id="question" placeholder="Question" required>
+            <input type="text" id="answer" placeholder="Answer" required>
+            <button type="submit">Add Flashcard</button>
+        </form>
+        <ul id="flashcards-list">
+            <!-- Flashcards will be listed here -->
+        </ul>
+
+        <div id="review-section" style="display:none; margin-top: 20px;">
+            <h2>Review Flashcard</h2>
+            <div id="review-card-area">
+                <p><strong>Question:</strong> <span id="review-question"></span></p>
+                <p style="display:none;"><strong>Answer:</strong> <span id="review-answer"></span></p>
+                <button id="show-answer-button">Show Answer</button>
+            </div>
+
+            <div id="review-controls" style="display:none; margin-top: 10px;">
+                <h3>How well did you recall?</h3>
+                <button class="ease-button" data-ease="hard">Hard</button>
+                <button class="ease-button" data-ease="medium">Medium</button>
+                <button class="ease-button" data-ease="easy">Easy</button>
+
+                <div style="margin-top: 10px;">
+                    <label for="custom-interval">Optional: Choose next review interval:</label>
+                    <select id="custom-interval">
+                        <option value="">Let Engine Decide</option>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <button id="submit-review-button" style="margin-top: 10px;">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
