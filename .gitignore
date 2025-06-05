@@ -5,6 +5,11 @@ build/
 dist/
 wheels/
 *.egg-info
+.log
+.DS_Store
+.pyc
+__pycache__/
 
 # Virtual environments
 .venv
+"FETCH_HEAD" 
